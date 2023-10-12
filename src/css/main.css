@@ -1,4 +1,4 @@
-/* PERSONALIZAÃ‡Ã•ES GERAIS */
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Source+Code+Pro:wght@200&display=swap');
@@ -13,7 +13,7 @@ html{
 }
 
 body{
-    background: rgb(23,1,41);
+    background: rgb(8, 7, 8);
     background: radial-gradient(circle, rgba(23,1,41,1) 0%, rgba(13,0,22,1) 100%);
     background-size: cover;
     background-position: top center;
@@ -31,7 +31,7 @@ section{
 }
 
 p::selection, h1::selection, h2::selection, h3::selection, span::selection, a::selection{
-    background: rgba(110, 0, 201, 0.2);
+    background: rgba(13, 0, 201, 0.2);
 }
 
 .lord-icon{
@@ -52,7 +52,7 @@ p::selection, h1::selection, h2::selection, h3::selection, span::selection, a::s
     width: 100%;
     height: 1px;
     background: rgb(243,234,249);
-    background: linear-gradient(90deg, rgba(45, 1, 75,0.5) 0%, rgba(110,12,175,1) 56%);
+    background: linear-gradient(90deg, rgba(6, 1, 75, 0.5) 0%, rgb(12, 15, 175) 56%);
     bottom: 0;
     left: 0;
     transform: scaleX(0);
@@ -121,7 +121,7 @@ nav li{
 
 .logo span{
     font-size: 2.5rem;
-    background: -webkit-linear-gradient(rgb(116, 0, 161), rgb(61, 61, 61));
+    background: -webkit-linear-gradient(rgb(3, 0, 161), rgb(61, 61, 61));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -143,7 +143,7 @@ nav li{
 }
 .bio span{
 
-    background: -webkit-linear-gradient(rgb(116, 0, 161), rgb(61, 61, 61));
+    background: -webkit-linear-gradient(rgb(3, 0, 161), rgb(61, 61, 61));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -160,13 +160,24 @@ nav li{
 }
 
 
-section .nave{
+section .imagep{
     width: 30vw;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     margin-left: 10vw;
-    -webkit-filter: drop-shadow(0 0 100px rgba(59, 3, 97, 0.5));
-    filter: drop-shadow(10px 0 100px rgba(61, 2, 100, 0.5));
+    -webkit-filter: drop-shadow(0 0 100px rgba(3, 9, 97, 0.5));
+    filter: drop-shadow(10px 0 100px rgba(3, 9, 97, 0.5));
+    border-radius: 50% ;
+    transition: transform 0.5s;
+    opacity: 80%;
+}
+
+.imagemp:hover .imagempixel {
+    opacity: 0; /* Quando o mouse passar por cima, a imagem original fica invisível */
+}
+
+.imagemp:hover .imagempixel {
+    opacity: 0; /* Quando o mouse passar por cima, a imagem original fica invisível */
 }
 
 #biosec,#tec{
@@ -220,7 +231,7 @@ section .nave{
 }
 
 #tec span{
-    background: -webkit-linear-gradient(rgb(116, 0, 161), rgb(80, 80, 80));
+    background: -webkit-linear-gradient(rgb(3, 0, 161), rgb(80, 80, 80));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -236,7 +247,7 @@ width: 50%;
 #prof-name{
     font-size: 3rem;
     font-weight: 200;
-    color: rgb(213, 130, 255);
+    color: rgb(120, 140, 255);
     align-items: center;
     font-family: 'Source Code Pro', monospace;
 }
@@ -254,7 +265,7 @@ width: 50%;
 }
 
 #projetos span{
-    background: -webkit-linear-gradient(rgb(116, 0, 161), rgb(80, 80, 80));
+    background: -webkit-linear-gradient(rgb(3, 0, 161), rgb(80, 80, 80));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -289,18 +300,18 @@ width: 50%;
 }
 
 .border-active{
-    border: 1px solid rgb(58, 1, 150);
+    border: 1px solid rgb(11, 1, 150);
 }
 
 .border-anime:hover{
-    border: 1px solid rgb(110, 12, 175);
+    border: 1px solid rgb(28, 12, 175);
     transition: 1s;
 }
 
 .type{
     font-size: 1rem;
     font-weight: 200;
-    color: rgb(210, 71, 252);
+    color: rgb(121, 119, 253);
     align-items: center;
     font-family: 'Source Code Pro', monospace;
 }
@@ -321,7 +332,7 @@ width: 50%;
 }
 
 .projeto a{
-    color: rgb(213, 130, 255);
+    color: rgb(127, 126, 216);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 200;
@@ -330,7 +341,7 @@ width: 50%;
 }
 .projeto a:hover{
     text-decoration: none;
-    color: rgb(216, 144, 252);
+    color: rgb(67, 65, 201);
 }
 
 /* RODAPÃ‰ E CONTATO */
@@ -351,7 +362,7 @@ width: 50%;
     position: absolute;
     width: 50px;
     height: 50px;
-    background: rgba( 144, 19, 254, 0.25 );
+    background: rgba(54, 19, 254, 0.25);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 14.5px );
     -webkit-backdrop-filter: blur( 14.5px );
@@ -369,7 +380,7 @@ width: 50%;
 
 .menu .toggle.active{
     transform: rotate(136deg);
-    box-shadow: 0 0 0 35px rgba( 144, 19, 254, 0.25 ), 0 0 0 35px rgba( 144, 19, 254, 0.1 );
+    box-shadow: 0 0 0 35px rgba(70, 19, 254, 0.25), 0 0 0 35px rgba( 70, 19, 254, 0.25 );
     background: transparent;
     color: #fff;
 }
@@ -378,7 +389,7 @@ width: 50%;
     position: absolute;
     list-style: none;
     left: 23px;
-    transform: rotate(calc(360deg / 5 * var(--i)));
+    transform: rotate(calc(360deg / 3 * var(--i)));
     transform-origin: 55px;
     visibility: hidden;
     opacity: 0;
@@ -401,9 +412,29 @@ width: 50%;
     width: 25px;
     height: 25px;
     font-size: 1.3em;
-    transform: rotate(calc(360deg / -5 * var(--i)));
+    transform: rotate(calc(360deg / -3 * var(--i)));
 }
 
+.imagempixel {
+    opacity: 0; 
+}
+
+section .imagep:hover {
+    transform: scale(1.1); 
+    /* background-image: image('src/web/imagepixel.png'); */
+}
+
+.fonte-pequena {
+    font-size: 14px;
+}
+
+.fonte-media {
+    font-size: 16px;
+}
+
+.fonte-grande {
+    font-size: 18px;
+}
 
 /* Responsividade */
 
