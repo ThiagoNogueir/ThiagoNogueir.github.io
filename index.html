@@ -83,11 +83,22 @@
                 <script src="src/js/tecnologias.js"></script>
 
                 <ul class="grid-container">
-                    <li onclick="mostrarDescricao('Python')" class="grid-item">
-                        <i class="devicon-python-plain"></i>
+                    <li onclick="mostrarDescricao('Node.js')" class="grid-item">
+                        <i class="devicon-nodejs-plain"></i>
                     </li>
-                    <li onclick="mostrarDescricao('Django')" class="grid-item">
-                        <i class="devicon-django-plain"></i>
+                    <li onclick="mostrarDescricao('TypeScript')" class="grid-item">
+                        <i class="devicon-typescript-plain"></i>
+                    </li>
+                    <li onclick="mostrarDescricao('PostgreSQL')" class="grid-item">
+                        <i class="devicon-postgresql-plain"></i>
+                    </li>
+                    <!-- Prisma doesn't always have a devicon in older versions, using file-code as fallback or custom if available. 
+                         Using a generic code icon or checking if fontawesome has something similar. 
+                         Ideally I'd use an SVG, but sticking to icons available. 
+                         I will use a database icon for now or just text/image if needed. 
+                         Actually, let's try to see if I can simply put text "Prisma" or use a similar icon. -->
+                    <li onclick="mostrarDescricao('Prisma')" class="grid-item">
+                        <i class="fas fa-database"></i> <!-- Placeholder for Prisma -->
                     </li>
                     <li onclick="mostrarDescricao('Docker')" class="grid-item">
                         <i class="devicon-docker-plain"></i>
@@ -97,9 +108,6 @@
                     </li>
                     <li onclick="mostrarDescricao('MongoDB')" class="grid-item">
                         <i class="devicon-mongodb-plain"></i>
-                    </li>
-                    <li onclick="mostrarDescricao('MySQL')" class="grid-item">
-                        <i class="devicon-mysql-plain"></i>
                     </li>
                 </ul>
 
