@@ -9,183 +9,488 @@
     <title>Thiago | Backend Developer</title>
 
     <!-- SEO -->
-    <meta name="author" content="Thiago" />
-    <meta name="keywords" content="portfolio, backend, developer, python, django, docker, api" />
-    <meta name="description" content="Backend Developer Portfolio - Thiago Nogueira" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="src/css/main.css">
+    <meta name="author" content="Thiago Nogueira" />
+    <meta name="keywords" content="portfolio, backend, developer, python, django, docker, api, nodejs" />
+    <meta name="description" content="Portfólio de Thiago Nogueira - Backend Developer especializado em APIs escaláveis e soluções robustas" />
 
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/407a013642.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/main.css">
 </head>
 
 <body>
+    <!-- Particles Background -->
+    <div id="particles"></div>
 
-    <header>
-        <div class="logo" align="center">
-            <h1><span>{</span> Thiago.Portfolio <span>}</span></h1>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                Thiago dos Santos Nogueira
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projetos</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- BIO SECTION -->
-        <section id="biosec">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="dot red"></div>
-                    <div class="dot yellow"></div>
-                    <div class="dot green"></div>
-                    <span style="margin-left: 10px; font-size: 0.8rem; color: #8b949e;">main.py</span>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">Olá, eu sou</p>
+                <h1 class="hero-title">Thiago dos Santos Nogueira</h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
                 </div>
-                <div class="terminal-body">
-                    <div class="code-line">
-                        <span class="line-num">1</span><span class="keyword">class</span> <span
-                            class="function">BackendDeveloper</span>:
+                <p class="hero-description">
+                    Desenvolvedor Backend especializado em criar APIs escaláveis, 
+                    arquitetura de microsserviços e soluções robustas com Python, Node.js e tecnologias modernas.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/ThiagoNogueir" target="_blank" aria-label="GitHub">
+                        <i class="devicon-github-original"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank" aria-label="LinkedIn">
+                        <i class="devicon-linkedin-plain"></i>
+                    </a>
+                    <a href="https://t.me/+5519998152789" target="_blank" aria-label="Telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-bg"></div>
+                    <img src="src/web/imagep.bmp" alt="Thiago Nogueira" class="hero-img">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">&lt;</span>
+                Sobre Mim
+                <span class="title-icon">/&gt;</span>
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Sou <strong class="text-gradient">Desenvolvedor Backend</strong> com formação em 
+                        <strong>Ciência da Computação</strong> e paixão por criar soluções eficientes e escaláveis.
+                    </p>
+                    <p>
+                        Tenho experiência no desenvolvimento de <strong>APIs RESTful</strong>, 
+                        arquitetura de microsserviços e integração de sistemas. Meu foco está em 
+                        construir backends robustos que suportem aplicações de alta performance.
+                    </p>
+                    <p>
+                        Quando não estou codando, estou explorando novas tecnologias, 
+                        contribuindo para projetos open source ou estudando as melhores práticas 
+                        de desenvolvimento de software.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">+ Anos de Experiência</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="20">0</span>
+                            <span class="stat-label">+ Projetos Completados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">+ Tecnologias Dominadas</span>
+                        </div>
                     </div>
-                    <div class="code-line">
-                        <span class="line-num">2</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span> <span
-                            class="function">__init__</span>(<span class="variable">self</span>):
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                            class="variable">self</span>.name = <span class="string">"Thiago"</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                            class="variable">self</span>.role = <span class="string">"Backend Developer"</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                            class="variable">self</span>.education = <span class="string">"Ciência da Computação"</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">6</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                            class="comment"># Experiência em APIs REST, SQL/NoSQL, Docker e Linux</span>
-                    </div>
-                    <div class="code-line">
-                        <span class="line-num">8</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                            class="variable">self</span>.status = <span class="string">"Ready to Code"</span>
+                </div>
+                <div class="about-code">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">developer.py</span>
+                        </div>
+                        <div class="code-window-body">
+                            <pre><code><span class="code-line"><span class="code-keyword">class</span> <span class="code-class">BackendDeveloper</span>:</span>
+<span class="code-line">    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):</span>
+<span class="code-line">        <span class="code-param">self</span>.name = <span class="code-string">"Thiago Nogueira"</span></span>
+<span class="code-line">        <span class="code-param">self</span>.role = <span class="code-string">"Backend Developer"</span></span>
+<span class="code-line">        <span class="code-param">self</span>.location = <span class="code-string">"Brasil"</span></span>
+<span class="code-line"></span>
+<span class="code-line">    <span class="code-keyword">def</span> <span class="code-function">skills</span>(<span class="code-param">self</span>):</span>
+<span class="code-line">        <span class="code-keyword">return</span> [</span>
+<span class="code-line">            <span class="code-string">"Python"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"TypeScript"</span>,</span>
+<span class="code-line">            <span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MongoDB"</span>, <span class="code-string">"Docker"</span>,</span>
+<span class="code-line">            <span class="code-string">"AWS"</span>, <span class="code-string">"Linux"</span>, <span class="code-string">"Git"</span></span>
+<span class="code-line">        ]</span>
+<span class="code-line"></span>
+<span class="code-line">    <span class="code-keyword">def</span> <span class="code-function">status</span>(<span class="code-param">self</span>):</span>
+<span class="code-line">        <span class="code-keyword">return</span> <span class="code-string">"🚀 Ready to Code!"</span></span></code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- TECH SECTION -->
-        <section id="tec">
-            <h2><span>{</span> Tecnologias <span>}</span></h2>
-
-            <div class="d-flex flex-column align-items-center">
-                <script src="src/js/tecnologias.js"></script>
-
-                <ul class="grid-container">
-                    <li onclick="mostrarDescricao('Node.js')" class="grid-item">
-                        <i class="devicon-nodejs-plain"></i>
-                    </li>
-                    <li onclick="mostrarDescricao('TypeScript')" class="grid-item">
-                        <i class="devicon-typescript-plain"></i>
-                    </li>
-                    <li onclick="mostrarDescricao('PostgreSQL')" class="grid-item">
-                        <i class="devicon-postgresql-plain"></i>
-                    </li>
-                    <!-- Prisma doesn't always have a devicon in older versions, using file-code as fallback or custom if available. 
-                         Using a generic code icon or checking if fontawesome has something similar. 
-                         Ideally I'd use an SVG, but sticking to icons available. 
-                         I will use a database icon for now or just text/image if needed. 
-                         Actually, let's try to see if I can simply put text "Prisma" or use a similar icon. -->
-                    <li onclick="mostrarDescricao('Prisma')" class="grid-item">
-                        <i class="fas fa-database"></i> <!-- Placeholder for Prisma -->
-                    </li>
-                    <li onclick="mostrarDescricao('Docker')" class="grid-item">
-                        <i class="devicon-docker-plain"></i>
-                    </li>
-                    <li onclick="mostrarDescricao('Linux')" class="grid-item">
-                        <i class="devicon-linux-plain"></i>
-                    </li>
-                    <li onclick="mostrarDescricao('MongoDB')" class="grid-item">
-                        <i class="devicon-mongodb-plain"></i>
-                    </li>
-                </ul>
-
-                <div class="info-container">
-                    <h3 id="prof-name" class="text-accent-blue" style="margin-top: 0;">Descrição</h3>
-                    <p id="descricao">Selecione uma tecnologia para ver os detalhes do package.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projetos">
-            <h2><span>{</span> Projetos <span>}</span></h2>
-
-            <div class="projeto-grid">
-                <!-- FitAppPro -->
-                <div class="projeto">
-                    <div class="projeto-header">
-                        <h3>FitAppPro</h3>
-                        <i class="fa-solid fa-code text-accent-purple"></i>
-                    </div>
-                    <div class="projeto-content">
-                        <p class="projeto-descricao">
-                            <span class="keyword">const</span> description = <span class="string">"Sistema de gestão
-                                para aplicações fitness."</span>;<br>
-                            <span class="comment">// Backend robusto e escalável.</span>
-                        </p>
-                        <div class="projeto-links">
-                            <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" class="btn-code">
-                                <i class="devicon-github-original"></i> View Source
-                            </a>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">&lt;</span>
+                Habilidades Técnicas
+                <span class="title-icon">/&gt;</span>
+            </h2>
+            <p class="section-subtitle">Tecnologias que utilizo para transformar ideias em realidade</p>
+            
+            <div class="skills-grid">
+                <!-- Backend -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-server"></i> Backend
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-card" data-tech="Python">
+                            <i class="devicon-python-plain"></i>
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="Node.js">
+                            <i class="devicon-nodejs-plain"></i>
+                            <span>Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="TypeScript">
+                            <i class="devicon-typescript-plain"></i>
+                            <span>TypeScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="Django">
+                            <i class="devicon-django-plain"></i>
+                            <span>Django</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Placeholder 2 -->
-                <div class="projeto">
-                    <div class="projeto-header">
-                        <h3>Em Breve</h3>
-                        <i class="fa-solid fa-terminal text-accent-secondary"></i>
+                <!-- Database -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-database"></i> Database
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-card" data-tech="PostgreSQL">
+                            <i class="devicon-postgresql-plain"></i>
+                            <span>PostgreSQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="MongoDB">
+                            <i class="devicon-mongodb-plain"></i>
+                            <span>MongoDB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="Prisma">
+                            <i class="fas fa-database"></i>
+                            <span>Prisma</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="projeto-content">
-                        <p class="projeto-descricao">
-                            <span class="comment">// Mais projetos estão sendo desenvolvidos...</span>
-                        </p>
+                </div>
+
+                <!-- DevOps -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-cloud"></i> DevOps
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-card" data-tech="Docker">
+                            <i class="devicon-docker-plain"></i>
+                            <span>Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="Linux">
+                            <i class="devicon-linux-plain"></i>
+                            <span>Linux</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-tech="Git">
+                            <i class="devicon-git-plain"></i>
+                            <span>Git</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- FLOATING MENU -->
-    <div class="menu">
-        <div class="toggle" onclick="toggler()">
-            <i class="fa-solid fa-plus"></i>
         </div>
-        <ul>
-            <li class="social-item" style="--i:0;">
-                <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank">
-                    <i class="devicon-linkedin-plain"></i>
-                </a>
-            </li>
-            <li class="social-item" style="--i:1;">
-                <a href="https://github.com/ThiagoNogueir" target="_blank">
-                    <i class="devicon-github-original"></i>
-                </a>
-            </li>
-            <li class="social-item" style="--i:2;">
-                <a href="https://t.me/+5519998152789" target="_blank">
-                    <i class="fa-brands fa-telegram"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
+    </section>
 
-    <!-- SCRIPTS -->
-    <script src="src/js/menu-btn.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">&lt;</span>
+                Projetos
+                <span class="title-icon">/&gt;</span>
+            </h2>
+            <p class="section-subtitle">Alguns dos meus trabalhos mais recentes</p>
 
+            <div class="projects-grid">
+                <!-- FitAppPro -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">FitAppPro</h3>
+                        <p class="project-description">
+                            Sistema completo de gestão para aplicações fitness com backend escalável,
+                            autenticação JWT, API RESTful e integração com serviços externos.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- API RESTful -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">API RESTful Genérica</h3>
+                        <p class="project-description">
+                            Framework de API RESTful com autenticação, autorização, rate limiting,
+                            documentação Swagger e testes automatizados.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Jest</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Microservices -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Arquitetura de Microsserviços</h3>
+                        <p class="project-description">
+                            Implementação de arquitetura baseada em microsserviços com comunicação assíncrona,
+                            message broker e containerização completa.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">RabbitMQ</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- E-commerce API -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Backend</h3>
+                        <p class="project-description">
+                            Backend completo para e-commerce com gestão de produtos, carrinho,
+                            pagamentos e integrações com gateways de pagamento.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="projects-cta">
+                <a href="https://github.com/ThiagoNogueir" target="_blank" class="btn btn-primary">
+                    Ver Mais no GitHub
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">&lt;</span>
+                Contato
+                <span class="title-icon">/&gt;</span>
+            </h2>
+            <p class="section-subtitle">Vamos trabalhar juntos?</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Entre em Contato</h3>
+                    <p>Estou sempre aberto a novas oportunidades e parcerias. Se você tem uma pergunta ou apenas quer dizer oi, sinta-se à vontade para entrar em contato!</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:contato@thiago.dev">contato@thiago.dev</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localização</h4>
+                                <span>Brasil</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Disponibilidade</h4>
+                                <span>Open to Work</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://github.com/ThiagoNogueir" target="_blank">
+                            <i class="devicon-github-original"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank">
+                            <i class="devicon-linkedin-plain"></i>
+                        </a>
+                        <a href="https://t.me/+5519998152789" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Enviar Mensagem
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                &copy; 2026 Thiago Nogueira. Desenvolvido com 
+                <i class="fas fa-heart text-gradient"></i> e 
+                <i class="fas fa-coffee text-gradient"></i>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/js/main.js"></script>
 </body>
 
 </html>
