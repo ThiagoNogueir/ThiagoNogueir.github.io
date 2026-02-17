@@ -68,13 +68,13 @@
                     <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
                 </div>
                 <div class="hero-social">
-                    <a href="https://github.com/ThiagoNogueir" target="_blank" aria-label="GitHub">
+                    <a href="https://github.com/ThiagoNogueir" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="devicon-github-original"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="devicon-linkedin-plain"></i>
                     </a>
-                    <a href="https://t.me/+5519998152789" target="_blank" aria-label="Telegram">
+                    <a href="https://t.me/+5519998152789" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                         <i class="fa-brands fa-telegram"></i>
                     </a>
                 </div>
@@ -126,7 +126,7 @@
                             <span class="stat-label">+ Projetos Completados</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-number" data-target="20">0</span>
                             <span class="stat-label">+ Tecnologias Dominadas</span>
                         </div>
                     </div>
@@ -151,8 +151,9 @@
 <span class="code-line">    <span class="code-keyword">def</span> <span class="code-function">skills</span>(<span class="code-param">self</span>):</span>
 <span class="code-line">        <span class="code-keyword">return</span> [</span>
 <span class="code-line">            <span class="code-string">"Python"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"TypeScript"</span>,</span>
+<span class="code-line">            <span class="code-string">"PHP"</span>, <span class="code-string">"C#"</span>, <span class="code-string">"Pascal/Delphi"</span>,</span>
 <span class="code-line">            <span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MongoDB"</span>, <span class="code-string">"Docker"</span>,</span>
-<span class="code-line">            <span class="code-string">"AWS"</span>, <span class="code-string">"Linux"</span>, <span class="code-string">"Git"</span></span>
+<span class="code-line">            <span class="code-string">"ACBr"</span>, <span class="code-string">"FortesReport"</span>, <span class="code-string">"RaveReports"</span></span>
 <span class="code-line">        ]</span>
 <span class="code-line"></span>
 <span class="code-line">    <span class="code-keyword">def</span> <span class="code-function">status</span>(<span class="code-param">self</span>):</span>
@@ -173,105 +174,170 @@
                 <span class="title-icon">/&gt;</span>
             </h2>
             <p class="section-subtitle">Tecnologias que utilizo para transformar ideias em realidade</p>
-            
-            <div class="skills-grid">
-                <!-- Backend -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-server"></i> Backend
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-card" data-tech="Python">
-                            <i class="devicon-python-plain"></i>
-                            <span>Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-card" data-tech="Node.js">
-                            <i class="devicon-nodejs-plain"></i>
-                            <span>Node.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-card" data-tech="TypeScript">
-                            <i class="devicon-typescript-plain"></i>
-                            <span>TypeScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-card" data-tech="Django">
-                            <i class="devicon-django-plain"></i>
-                            <span>Django</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Database -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-database"></i> Database
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-card" data-tech="PostgreSQL">
-                            <i class="devicon-postgresql-plain"></i>
-                            <span>PostgreSQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+            <div class="skills-carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="skills-carousel">
+                    <div class="skills-carousel-track">
+                        <!-- Backend -->
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-server"></i> Backend
+                            </h3>
+                            <div class="skill-items">
+                                <div class="skill-card" data-tech="Python">
+                                    <i class="devicon-python-plain"></i>
+                                    <span>Python</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="Node.js">
+                                    <i class="devicon-nodejs-plain"></i>
+                                    <span>Node.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="TypeScript">
+                                    <i class="devicon-typescript-plain"></i>
+                                    <span>TypeScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="PHP">
+                                    <i class="devicon-php-plain"></i>
+                                    <span>PHP</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="C#">
+                                    <i class="devicon-csharp-plain"></i>
+                                    <span>C#</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="Pascal/Delphi">
+                                    <i class="fas fa-code"></i>
+                                    <span>Pascal/Delphi</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="Django">
+                                    <i class="devicon-django-plain"></i>
+                                    <span>Django</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-card" data-tech="MongoDB">
-                            <i class="devicon-mongodb-plain"></i>
-                            <span>MongoDB</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-card" data-tech="Prisma">
-                            <i class="fas fa-database"></i>
-                            <span>Prisma</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- DevOps -->
-                <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <i class="fas fa-cloud"></i> DevOps
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-card" data-tech="Docker">
-                            <i class="devicon-docker-plain"></i>
-                            <span>Docker</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
+                        <!-- Database -->
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-database"></i> Database
+                            </h3>
+                            <div class="skill-items">
+                                <div class="skill-card" data-tech="PostgreSQL">
+                                    <i class="devicon-postgresql-plain"></i>
+                                    <span>PostgreSQL</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="MongoDB">
+                                    <i class="devicon-mongodb-plain"></i>
+                                    <span>MongoDB</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="Prisma">
+                                    <i class="fas fa-database"></i>
+                                    <span>Prisma</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-card" data-tech="Linux">
-                            <i class="devicon-linux-plain"></i>
-                            <span>Linux</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+
+                        <!-- DevOps -->
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-cloud"></i> DevOps
+                            </h3>
+                            <div class="skill-items">
+                                <div class="skill-card" data-tech="Docker">
+                                    <i class="devicon-docker-plain"></i>
+                                    <span>Docker</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="Linux">
+                                    <i class="devicon-linux-plain"></i>
+                                    <span>Linux</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="Git">
+                                    <i class="devicon-git-plain"></i>
+                                    <span>Git</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-card" data-tech="Git">
-                            <i class="devicon-git-plain"></i>
-                            <span>Git</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+
+                        <!-- Ferramentas & Componentes -->
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-toolbox"></i> Ferramentas & Componentes
+                            </h3>
+                            <div class="skill-items">
+                                <div class="skill-card" data-tech="ACBr">
+                                    <i class="fas fa-barcode"></i>
+                                    <span>ACBr</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="FortesReport">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>FortesReport</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-tech="RaveReports">
+                                    <i class="fas fa-print"></i>
+                                    <span>RaveReports</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 60%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <button class="carousel-btn next-btn" aria-label="Próximo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
+            
+            <div class="carousel-dots"></div>
         </div>
     </section>
 
@@ -285,118 +351,132 @@
             </h2>
             <p class="section-subtitle">Alguns dos meus trabalhos mais recentes</p>
 
-            <div class="projects-grid">
-                <!-- FitAppPro -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">FitAppPro</h3>
-                        <p class="project-description">
-                            Sistema completo de gestão para aplicações fitness com backend escalável,
-                            autenticação JWT, API RESTful e integração com serviços externos.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="projects-carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
 
-                <!-- API RESTful -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">API RESTful Genérica</h3>
-                        <p class="project-description">
-                            Framework de API RESTful com autenticação, autorização, rate limiting,
-                            documentação Swagger e testes automatizados.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Node.js</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Jest</span>
-                        </div>
-                    </div>
-                </article>
+                <div class="projects-carousel">
+                    <div class="projects-carousel-track">
+                        <!-- FitAppPro -->
+                        <article class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/ThiagoNogueir/FitAppPro" target="_blank" rel="noopener noreferrer" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">FitAppPro</h3>
+                                <p class="project-description">
+                                    Sistema completo de gestão para aplicações fitness com backend escalável,
+                                    autenticação JWT, API RESTful e integração com serviços externos.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Django</span>
+                                    <span class="tag">PostgreSQL</span>
+                                    <span class="tag">Docker</span>
+                                </div>
+                            </div>
+                        </article>
 
-                <!-- Microservices -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Arquitetura de Microsserviços</h3>
-                        <p class="project-description">
-                            Implementação de arquitetura baseada em microsserviços com comunicação assíncrona,
-                            message broker e containerização completa.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Docker</span>
-                            <span class="tag">Kubernetes</span>
-                            <span class="tag">RabbitMQ</span>
-                            <span class="tag">Node.js</span>
-                        </div>
-                    </div>
-                </article>
+                        <!-- API RESTful -->
+                        <article class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">API RESTful Genérica</h3>
+                                <p class="project-description">
+                                    Framework de API RESTful com autenticação, autorização, rate limiting,
+                                    documentação Swagger e testes automatizados.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">MongoDB</span>
+                                    <span class="tag">Jest</span>
+                                </div>
+                            </div>
+                        </article>
 
-                <!-- E-commerce API -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+                        <!-- Microservices -->
+                        <article class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Arquitetura de Microsserviços</h3>
+                                <p class="project-description">
+                                    Implementação de arquitetura baseada em microsserviços com comunicação assíncrona,
+                                    message broker e containerização completa.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">Kubernetes</span>
+                                    <span class="tag">RabbitMQ</span>
+                                    <span class="tag">Node.js</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- E-commerce API -->
+                        <article class="project-card">
+                            <div class="project-image">
+                                <div class="project-overlay">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">E-commerce Backend</h3>
+                                <p class="project-description">
+                                    Backend completo para e-commerce com gestão de produtos, carrinho,
+                                    pagamentos e integrações com gateways de pagamento.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">FastAPI</span>
+                                    <span class="tag">PostgreSQL</span>
+                                    <span class="tag">Redis</span>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-commerce Backend</h3>
-                        <p class="project-description">
-                            Backend completo para e-commerce com gestão de produtos, carrinho,
-                            pagamentos e integrações com gateways de pagamento.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Redis</span>
-                        </div>
-                    </div>
-                </article>
+                </div>
+
+                <button class="carousel-btn next-btn" aria-label="Próximo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
 
+            <div class="projects-carousel-dots"></div>
+
             <div class="projects-cta">
-                <a href="https://github.com/ThiagoNogueir" target="_blank" class="btn btn-primary">
+                <a href="https://github.com/ThiagoNogueir" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     Ver Mais no GitHub
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -444,13 +524,13 @@
                     </div>
 
                     <div class="contact-social">
-                        <a href="https://github.com/ThiagoNogueir" target="_blank">
+                        <a href="https://github.com/ThiagoNogueir" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <i class="devicon-github-original"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank">
+                        <a href="https://www.linkedin.com/in/thiago-dos-santos-nogueira-363b4b185/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <i class="devicon-linkedin-plain"></i>
                         </a>
-                        <a href="https://t.me/+5519998152789" target="_blank">
+                        <a href="https://t.me/+5519998152789" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                             <i class="fa-brands fa-telegram"></i>
                         </a>
                     </div>

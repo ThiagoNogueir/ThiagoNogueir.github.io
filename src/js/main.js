@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initCounterAnimation();
     initContactForm();
+    initSkillsCarousel();
+    initProjectsCarousel();
 });
 
 /* ===================================
@@ -300,3 +302,261 @@ document.querySelectorAll('.skill-card').forEach(card => {
         console.log(`Tech: ${tech}`);
     });
 });
+
+/* ===================================
+   Skills Carousel
+   =================================== */
+function initSkillsCarousel() {
+    const track = document.querySelector('.skills-carousel-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const cards = document.querySelectorAll('.skill-category');
+    
+    function updateCarousel() {
+        const container = track.parentElement;
+        const containerWidth = container.clientWidth;
+        const cardWidth = window.innerWidth <= 992 ? 300 : 340;
+        const gap = 32;
+        const totalWidth = cardWidth + gap;
+        const visibleCards = Math.floor((containerWidth + gap) / totalWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        
+        return { cardWidth, gap, totalWidth, maxIndex };
+    }
+    
+    let { cardWidth, gap, totalWidth, maxIndex } = updateCarousel();
+
+    let currentIndex = 0;
+    
+    // Criar dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    function updateButtons() {
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        const offset = -(currentIndex * totalWidth);
+        track.style.transform = `translateX(${offset}px)`;
+        updateDots();
+        updateButtons();
+    }
+
+    function nextSlide() {
+        if (currentIndex < maxIndex) {
+            goToSlide(currentIndex + 1);
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Swipe/touch support
+    let startX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX;
+        track.style.transition = 'none';
+    });
+    
+    track.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.pageX;
+        const diff = currentX - startX;
+        const offset = -(currentIndex * totalWidth) + diff;
+        track.style.transform = `translateX(${offset}px)`;
+    });
+    
+    track.addEventListener('mouseup', () => {
+        isDragging = false;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+    
+    track.addEventListener('mouseleave', () => {
+        isDragging = false;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+    
+    // Touch support para mobile
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX;
+        track.style.transition = 'none';
+    });
+    
+    track.addEventListener('touchmove', (e) => {
+        const currentX = e.touches[0].pageX;
+        const diff = currentX - startX;
+        const offset = -(currentIndex * totalWidth) + diff;
+        track.style.transform = `translateX(${offset}px)`;
+    });
+    
+    track.addEventListener('touchend', () => {
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    updateButtons();
+}
+
+/* ===================================
+   Projects Carousel
+   =================================== */
+function initProjectsCarousel() {
+    const track = document.querySelector('.projects-carousel-track');
+    const prevBtn = document.querySelector('.projects-carousel-container .prev-btn');
+    const nextBtn = document.querySelector('.projects-carousel-container .next-btn');
+    const dotsContainer = document.querySelector('.projects-carousel-dots');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const cards = document.querySelectorAll('.projects-carousel-track .project-card');
+    
+    function updateCarousel() {
+        const container = track.parentElement;
+        const containerWidth = container.clientWidth;
+        const cardWidth = window.innerWidth <= 992 ? 300 : 340;
+        const gap = 32;
+        const totalWidth = cardWidth + gap;
+        const visibleCards = Math.floor((containerWidth + gap) / totalWidth);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        
+        return { cardWidth, gap, totalWidth, maxIndex };
+    }
+    
+    let { cardWidth, gap, totalWidth, maxIndex } = updateCarousel();
+
+    let currentIndex = 0;
+
+    // Criar dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('projects-carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.projects-carousel-dot');
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function updateButtons() {
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        const offset = -(currentIndex * totalWidth);
+        track.style.transform = `translateX(${offset}px)`;
+        updateDots();
+        updateButtons();
+    }
+
+    function nextSlide() {
+        if (currentIndex < maxIndex) {
+            goToSlide(currentIndex + 1);
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        }
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Swipe/touch support
+    let startX = 0;
+    let isDragging = false;
+
+    track.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX;
+        track.style.transition = 'none';
+    });
+
+    track.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.pageX;
+        const diff = currentX - startX;
+        const offset = -(currentIndex * totalWidth) + diff;
+        track.style.transform = `translateX(${offset}px)`;
+    });
+
+    track.addEventListener('mouseup', () => {
+        isDragging = false;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+
+    track.addEventListener('mouseleave', () => {
+        isDragging = false;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+
+    // Touch support para mobile
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX;
+        track.style.transition = 'none';
+    });
+
+    track.addEventListener('touchmove', (e) => {
+        const currentX = e.touches[0].pageX;
+        const diff = currentX - startX;
+        const offset = -(currentIndex * totalWidth) + diff;
+        track.style.transform = `translateX(${offset}px)`;
+    });
+
+    track.addEventListener('touchend', () => {
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    updateButtons();
+}
