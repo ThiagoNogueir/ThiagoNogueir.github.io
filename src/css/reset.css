@@ -1,5 +1,5 @@
 /* ===================================
-   CSS Reset Moderno
+   CSS Reset Moderno - Mobile First
    =================================== */
 
 *,
@@ -13,6 +13,9 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -20,6 +23,8 @@ body {
     line-height: 1.6;
     text-rendering: optimizeSpeed;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 ul, ol {
@@ -29,6 +34,7 @@ ul, ol {
 a {
     text-decoration: none;
     color: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
 img,
@@ -38,6 +44,7 @@ canvas,
 svg {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 input,
@@ -59,12 +66,21 @@ table {
     border-spacing: 0;
 }
 
-/* Remove animações para quem prefere movimento reduzido */
+/* Prevenir zoom em inputs no iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+}
+
+/* Reduzir animações para quem prefere */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
-    
+
     *,
     *::before,
     *::after {
