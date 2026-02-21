@@ -56,13 +56,7 @@ function initTypingEffect() {
     const typingElement = document.querySelector('.typing-text');
     if (!typingElement) return;
 
-    const texts = [
-        'Backend Developer',
-        'Python Developer',
-        'Node.js Developer',
-        'API Architect'
-    ];
-
+    const texts = ['Backend Developer', 'Python Developer', 'Node.js Developer', 'API Architect'];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -70,7 +64,7 @@ function initTypingEffect() {
 
     function type() {
         const currentText = texts[textIndex];
-
+        
         if (isDeleting) {
             typingElement.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
@@ -80,7 +74,7 @@ function initTypingEffect() {
             charIndex++;
             typingSpeed = 100;
         }
-
+        
         if (!isDeleting && charIndex === currentText.length) {
             typingSpeed = 2000;
             isDeleting = true;
@@ -89,10 +83,10 @@ function initTypingEffect() {
             textIndex = (textIndex + 1) % texts.length;
             typingSpeed = 500;
         }
-
+        
         setTimeout(type, typingSpeed);
     }
-
+    
     type();
 }
 
