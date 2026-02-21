@@ -5,8 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
-    initTypingEffect();
-    initParticles();
     initScrollAnimations();
     initCounterAnimation();
     initContactForm();
@@ -20,7 +18,10 @@ function initNavbar() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     const navLinksItems = document.querySelectorAll('.nav-link');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
+    // Navbar scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -29,23 +30,50 @@ function initNavbar() {
         }
     });
 
+    // Toggle mobile menu
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    navLinksItems.forEach(link => {
+    // Close mobile menu on link click
+    mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
+    // Close mobile menu on outside click
     document.addEventListener('click', (e) => {
-        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        if (mobileMenu.classList.contains('active') && 
+            !navToggle.contains(e.target) && 
+            !mobileMenu.contains(e.target)) {
             navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
         }
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinksItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
     });
 }
 
@@ -154,13 +182,11 @@ function initScrollAnimations() {
                 entry.target.classList.add('visible');
 
                 if (entry.target.classList.contains('skill-category')) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0';
+                    const skillItems = entry.target.querySelectorAll('.skill-item');
+                    skillItems.forEach((item, index) => {
                         setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
+                            item.classList.add('animated');
+                        }, index * 100);
                     });
                 }
             }
@@ -181,7 +207,7 @@ function initScrollAnimations() {
    Counter Animation
    =================================== */
 function initCounterAnimation() {
-    const counters = document.querySelectorAll('.stat-number');
+    const counters = document.querySelectorAll('.stat-value');
 
     const observerOptions = {
         threshold: 0.5
@@ -191,7 +217,9 @@ function initCounterAnimation() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-target'));
+                const target = parseInt(counter.getAttribute('data-count'));
+                if (isNaN(target)) return;
+                
                 const duration = 2000;
                 const increment = target / (duration / 16);
                 let current = 0;
@@ -202,7 +230,7 @@ function initCounterAnimation() {
                         counter.textContent = Math.floor(current);
                         requestAnimationFrame(updateCounter);
                     } else {
-                        counter.textContent = target;
+                        counter.textContent = target + '+';
                     }
                 };
 
