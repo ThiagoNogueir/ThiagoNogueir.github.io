@@ -5,10 +5,44 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
+    initCursorGlow();
     initScrollAnimations();
     initCounterAnimation();
     initContactForm();
 });
+
+/* ===================================
+   Cursor Glow Effect
+   =================================== */
+function initCursorGlow() {
+    const cursorGlow = document.querySelector('.cursor-glow');
+    if (!cursorGlow) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorGlow.classList.add('active');
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursorGlow.classList.remove('active');
+    });
+
+    function animate() {
+        currentX += (mouseX - currentX) * 0.1;
+        currentY += (mouseY - currentY) * 0.1;
+        
+        cursorGlow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
 
 /* ===================================
    Navbar Scroll & Mobile Menu
